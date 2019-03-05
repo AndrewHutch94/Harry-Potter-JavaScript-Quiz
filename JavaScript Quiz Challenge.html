@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+    <html lang="en">
+        <head>
+            <title>JavaScript Quiz Challenge</title>
+            <meta charset="utf-8">
+            <link rel="stylesheet" type="text/css" href="Style.css">
+            <link href="https://fonts.googleapis.com/css?family=Cinzel" rel="stylesheet">
+        </head>
+        
+        <body>
+
+        <h1>The Harry Potterhead Quiz!</h1>
+
+            
+            
+            <div id="quiz"></div>
+            <button id="submit"> Get Results </button>
+            <div id="results"></div>
+
+            <script>
+                
+                
+                var myQuestions = [
+                
+                {
+                    question: "1. What is the name of the device that Dumbledore uses when putting out the street lights on Privet Drive?",
+                    answers: {
+                        a: "The Deluminator" + "<br>",
+                        b: "A Wand" + "<br>",
+                        c: "A Lightswitch" + "<br>",
+                        d: "His Fingers" + "<br>"
+                    },
+                    correctAnswer: 'a'
+                },
+
+                {
+                    question: "2. What position does Harry play on the Quidditch team?",
+                    answers: {
+                        a: "Keeper" + "<br>",
+                        b: "Chaser" + "<br>",
+                        c: "Beater" + "<br>",
+                        d: "Seeker" + "<br>"
+                    },
+                    correctAnswer: "d"
+                },
+                
+                {
+                    question: "3. What dark wizard did Albus Dumbledore defeat in 1945?",
+                    answers: {
+                        a: "Lucius Malfoy" + "<br>",
+                        b: "GreyBack" + "<br>",
+                        c: "Grindelwald" + "<br>",
+                        d: "Barty Crouch Junior" + "<br>"
+                    },
+                    correctAnswer: 'c'
+                },
+
+                {
+                    question: "4. Who was flying with Mad Eye when he died?",
+                    answers: {
+                        a: "Harry Potter" + "<br>",
+                        b: "Mundungus Fletcher" + "<br>",
+                        c: "George Weasley" + "<br>",
+                        d: "Fred Weasley" + "<br>"
+                    },
+                    correctAnswer: "b"
+                },
+                
+                {
+                    question: "5. How did Harry and Ron get to Hogwarts their second year?",
+                    answers: {
+                        a: "The Hogwarts Express" + "<br>",
+                        b: "A Flying Car" + "<br>",
+                        c: "They Walked" + "<br>",
+                        d: "Flying Broomsticks" + "<br>"
+                    },
+                    correctAnswer: "b"
+                },
+
+                {
+                    question: "6. What is Tom Riddle’s middle name?",
+                    answers: {
+                        a: "Harry" + "<br>",
+                        b: "Voldemort" + "<br>",
+                        c: "Marvolo" + "<br>",
+                        d: "Bob" + "<br>"
+                    },
+                    correctAnswer: "c"
+                },
+
+                {
+                    question: "7. What breed of dragon is Hagrid’s pet/",
+                    answers: {
+                        a: "Hungarian Horntale" + "<br>",
+                        b: "Chinese Fireball" + "<br>",
+                        c: "Swedish Short-Snout" + "<br>",
+                        d: "Norwegian Ridgeback Dragon" + "<br>"
+                    },
+                    correctAnswer: "d"
+                },
+
+                {
+                    question: "8. What is Snape’s Patronus?",
+                    answers: {
+                        a: "A Doe" + "<br>",
+                        b: "A Snake" + "<br>",
+                        c: "A Stag" + "<br>",
+                        d: "An Otter" + "<br>"
+                    },
+                    correctAnswer: "a"
+                },
+
+                {
+                    question: "9. What is the name of the book Hermione gives to Harry before his first ever Quidditch match?",
+                    answers: {
+                        a: "Hogwarts: A History" + "<br>",
+                        b: "How To Fly A Broom" + "<br>",
+                        c: "Quidditch Throughout The Ages" + "<br>",
+                        d: "Your aGuide To Transfiguration" + "<br>"
+                    },
+                    correctAnswer: "c"
+                },
+
+                {
+                    question: "10. What is the name of Dumbledore’s phoenix?",
+                    answers: {
+                        a: "Hedwig" + "<br>",
+                        b: "Fawkes" + "<br>",
+                        c: "Scabbers" + "<br>",
+                        d: "Crookshanks" + "<br>"
+                    },
+                    correctAnswer: "b"
+                },
+
+                {
+                    question: "11. Who was the Slytherin Quidditch captain in Harry’s first match?",
+                    answers: {
+                        a: "Marcus Flint" + "<br>",
+                        b: "Draco Malfoy" + "<br>",
+                        c: "Cedric Diggory" + "<br>",
+                        d: "Oliver Wood" + "<br>"
+                    },
+                    correctAnswer: "a"
+                },
+
+                {
+                    question: "12. Who was Scabbers in his Animagus form?",
+                    answers: {
+                        a: "Sirius Black" + "<br>",
+                        b: "Lord Voldemort" + "<br>", 
+                        c: "Alister Moody" + "<br>",
+                        d: "Peter Pettigrew" + "<br>"
+                    },
+                    correctAnswer: "d"
+                },
+
+                {
+                    question: " 13. Who/What does Harry see attacking Ron’s father in his dream?",
+                    answers: {
+                        a: "Greyback The Werewolf" + "<br>",
+                        b: "Nagini The Snake" + "<br>",
+                        c: "Lord Voldemort" + "<br>",
+                        d: "A Troll" + "<br>"
+                    },
+                    correctAnswer: "b"
+                },
+
+                {
+                    question: "14. What is the name of the potion that grants good luck to whoever drinks it?",
+                    answers: {
+                        a: "Draught of Living Death" + "<br>",
+                        b: "Polyjuice Potion" + "<br>",
+                        c: "Felix Felicis" + "<br>",
+                        d: "Pepperup Potion" + "<br>"
+                    },
+                    correctAnswer: "c"
+                },
+
+                {
+                    question: " 15. What is the full name of Dumbledore, the headmaster of Hogwarts?",
+                    answers: {
+                        a: "Albus Percival Wulfric Brian Dumbledore" + "<br>",
+                        b: "Albus Brain Wulfric Percival Dumbledore" + "<br>",
+                        c: "Albus Wulfric Percival Brian Dumbledore" + "<br>",
+                        d: "Albus Percival Brain Wulfric Dumbledore" + "<br>",
+                    },
+                    correctAnswer: "a"
+                },
+
+                {
+                    question: "16. What type of wizard is Harry’s godfather?",
+                    answers: {
+                        a: "Dark Wizard" + "<br>",
+                        b: "An Animagus" + "<br>",
+                        c: "A Sprite" + "<br>",
+                        d: "A regular Wizard" + "<br>"
+                    },
+                    correctAnswer: "b"
+                },
+
+                {
+                    question: "17. What is Harry’s Father’s name?",
+                    answers: {
+                        a: "David" + "<br>",
+                        b: "John" + "<br>",
+                        c: "Jim" + "<br>",
+                        d: "James" + "<br>"
+                    },
+                    correctAnswer: "d"
+                },
+
+                {
+                    question: "18. What magical plant does Harry use to breathe underwater in the books?",
+                    answers: {
+                        a: "Mandrake Leaves" + "<br>",
+                        b: "Dittany Roots" + "<br>",
+                        c: "Devil's Snare" + "<br>",
+                        d: "Gillyweed" + "<br>"
+                    },
+                    correctAnswer: "d"
+                },
+
+                {
+                    question: "19. On what date was Harry Potter born?",
+                    answers: {
+                        a: "18th of August 1994" + "<br>",
+                        b: "31st of July 1980" + "<br>",
+                        c: "17th of January 1988" + "<br>",
+                        d: "10th of December 1980" + "<br>"
+                    },
+                    correctAnswer: "b"
+                },
+
+                {
+                    question: "20. What is Harry’s house at Hogwarts?",
+                    answers: {
+                        a: "Gryffindor" + "<br>",
+                        b: "Hufflepuff" + "<br>",
+                        c: "Ravenclaw" + "<br>",
+                        d: "Slytherin" + "<br>"
+                    },
+                    correctAnswer: "a"
+                },
+
+
+            ];
+
+            var quizContainer = document.getElementById('quiz');
+            
+            var resultsContainer = document.getElementById('results');
+            
+            var submitButton = document.getElementById('submit');
+
+            generateQuiz(myQuestions, quizContainer, resultsContainer, submitButton);
+
+            function generateQuiz(questions, quizContainer, resultsContainer, submitButton){
+
+                function showQuestions(questions, quizContainer){
+                     
+                    var output = [];
+                    var answers;
+
+                     
+                    for(var i=0; i<questions.length; i++){
+                        
+                        
+                        answers = [];
+
+                        
+                        for(letter in questions[i].answers){
+
+                            
+                            answers.push(
+                                '<label>'
+                                    + '<input type="radio" name="question'+ i +'" value="'+ letter +'">'
+                                    + letter + ': '
+                                    + questions[i].answers[letter]
+                                + '</label>'
+                            );
+                        }
+
+                         
+                        output.push(
+                            '<div class="question">' + questions[i].question + '</div>'
+                            + '<div class="answers">' + answers.join('') + '</div>'
+                        );
+                    }
+
+                   
+                    quizContainer.innerHTML = output.join('');
+                }
+
+
+                function showResults(questions, quizContainer, resultsContainer){
+                    
+                    
+                    var answerContainers = quizContainer.querySelectorAll('.answers');
+                    
+                   
+                    var userAnswer = '';
+                    var numCorrect = 0;
+                    
+                   
+                    for(var i=0; i<questions.length; i++){
+
+                       
+                        userAnswer = (answerContainers[i].querySelector('input[name=question'+ i +']:checked')||{}).value;
+                        
+                       
+                        if(userAnswer===questions[i].correctAnswer){
+                            
+                            numCorrect++;
+                            
+                          
+                            answerContainers[i].style.color = 'lightgreen';
+                        }
+                      
+                        else{
+                            
+                            answerContainers[i].style.color = 'red';
+                        }
+                    }
+
+                    
+                    resultsContainer.innerHTML = numCorrect + ' out of ' + questions.length;
+                }
+
+                
+                showQuestions(questions, quizContainer);
+                
+               
+                submitButton.onclick = function(){
+                    showResults(questions, quizContainer, resultsContainer);
+                }
+
+            }
+
+
+
+            </script>
+            
+        </body>
+    </html>
+
+    
